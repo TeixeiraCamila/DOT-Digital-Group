@@ -350,14 +350,9 @@ document.addEventListener('DOMContentLoaded', function () {
       if (isCorrect) {
         objectiveFeedback.innerHTML = `
           <div class="feedback success">
-            <div class="feedback__icon">
-              <svg width="8" height="8" viewBox="0 0 8 8" fill="none" aria-hidden="true">
-                <path d="M1 4L3 6L7 2" stroke="#15803d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
             <div class="feedback__content">
               <strong>É isso aí!</strong>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur commodi odio maiores accusamus aspernatur consequatur ipsam dignissimos magnam hic, velit est perferendis explicabo aperiam ratione veritatis labore.</p>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur commodi odio maiores aspernatur consequatur ipsam dignissimos magnam hic, velit est perferendis explicabo aperiam ratione veritatis labore.</p>
             </div>
             <button class="feedback__close" aria-label="Fechar">
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
@@ -370,14 +365,9 @@ document.addEventListener('DOMContentLoaded', function () {
       } else {
         objectiveFeedback.innerHTML = `
           <div class="feedback error">
-            <div class="feedback__icon">
-              <svg width="8" height="8" viewBox="0 0 8 8" fill="none" aria-hidden="true">
-                <path d="M1 1L7 7M7 1L1 7" stroke="#854d0e" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-            </div>
             <div class="feedback__content">
               <strong>Tente novamente!</strong>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur commodi odio maiores accusamus aspernatur consequatur ipsam dignissimos magnam hic, velit est perferendis explicabo aperiam ratione veritatis labore.</p>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur commodi odio maiores aspernatur consequatur ipsam dignissimos magnam hic, velit est perferendis explicabo aperiam ratione veritatis labore.</p>
             </div>
             <button class="feedback__close" aria-label="Fechar">
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
@@ -514,7 +504,11 @@ document.addEventListener('DOMContentLoaded', function () {
         if (index >= 0 && index < totalSlides) {
           currentIndex = index
           slides.forEach((slide, i) => {
-            slide.style.display = i === currentIndex ? 'block' : 'none'
+            if (i === currentIndex) {
+              slide.classList.add('active')
+            } else {
+              slide.classList.remove('active')
+            }
           })
           updatePagination()
         }
@@ -538,7 +532,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Inicializar - garantir que todos os slides estejam escondidos exceto o primeiro
       slides.forEach((slide, i) => {
-        slide.style.display = i === 0 ? 'block' : 'none'
+        if (i === 0) {
+          slide.classList.add('active')
+        } else {
+          slide.classList.remove('active')
+        }
       })
       
       updatePagination()
