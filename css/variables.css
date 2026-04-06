@@ -1,121 +1,77 @@
-:root {
-  /* ============================================
-     CORES - Design System EdTech
-     ============================================ */
-  
-  /* Primary */
-  --color-primary: #76b900;
-  --color-primary-light: #77b902;
-  --color-primary-alpha: rgba(118, 185, 0, 0.1);
-  --color-primary-alpha-2: rgba(118, 185, 0, 0.2);
-  --color-primary-alpha-3: rgba(118, 185, 0, 0.05);
-  
-  /* Dark / Surface */
-  --color-dark: #0c0a08;
-  --color-dark-surface: #1c232f;
-  --color-dark-2: #1a1a1a;
-  
-  /* Background */
-  --color-bg-main: #f7f8f5;
-  --color-bg-card: #ffffff;
-  --color-bg-card-alt: #f9fafb;
-  --color-bg-card-hover: #f3f4f6;
-  --color-bg-input: #e2e8f0;
-  
-  /* Text */
-  --color-text-primary: #171d0c;
-  --color-text-secondary: #0c0a08;
-  --color-text-tertiary: #5c6b48;
-  --color-text-muted: #64748b;
-  --color-text-light: #d1d5db;
-  --color-text-white: #ffffff;
-  --color-text-disabled: #9ca3af;
-  
-  /* Border */
-  --color-border: #e5e7eb;
-  --color-border-light: #e2e8f0;
-  --color-border-dark: #4b5563;
-  --color-border-subtle: rgba(255, 255, 255, 0.1);
-  --color-border-subtle-dark: rgba(255, 255, 255, 0.26);
-  
-  /* Feedback / States */
-  --color-success: #22c55e;
-  --color-success-bg: #e8f5e9;
-  --color-warning: #eab308;
-  --color-warning-bg: #fff9c4;
-  --color-warning-text: #854d0e;
-  --color-error: #ef4444;
-  --color-success-text: #15803d;
-  --color-success-text-2: #166534;
-  
-/* ============================================
-   FONTES
-   ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
---font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
---font-mono: 'Liberation Mono', 'Courier New', 'Consolas', 'Monaco', monospace;
-  
-  /* ============================================
-     TAMANHOS DE FONTE
-     ============================================ */
-  
-  --font-size-xs: 12px;
-  --font-size-sm: 14px;
-  --font-size-base: 16px;
-  --font-size-lg: 18px;
-  --font-size-xl: 20px;
-  --font-size-2xl: 24px;
-  --font-size-3xl: 36px;
-  --font-size-4xl: 48px;
-  --font-size-5xl: 72px;
-  
-  /* ============================================
-     ESPAÇAMENTOS FIXOS
-     ============================================ */
-  
-  --spacing-xs: 4px;
-  --spacing-sm: 8px;
-  --spacing-md: 16px;
-  --spacing-lg: 24px;
-  --spacing-xl: 32px;
-  --spacing-2xl: 48px;
-  --spacing-3xl: 64px;
-  --spacing-4xl: 96px;
-  
-  /* ============================================
-     BORDAS
-     ============================================ */
-  
-  --border-radius-sm: 4px;
-  --border-radius-md: 8px;
-  --border-radius-lg: 12px;
-  --border-radius-xl: 16px;
-  --border-radius-full: 9999px;
-  
-  /* ============================================
-     SOMBRAS
-     ============================================ */
-  
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
-  --shadow-xl: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
-  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
-  --shadow-card-hover: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
-  
-  /* ============================================
-     LARGURAS FIXAS
-     ============================================ */
-  
-  --container-max-width: 1280px;
-  --container-content-width: 1152px;
-  --sidebar-width: 240px;
-  
-  /* ============================================
-     TRANSIÇÕES
-     ============================================ */
-  
-  --transition-fast: 150ms ease;
-  --transition-base: 200ms ease;
-  --transition-slow: 300ms ease;
+:root {
+   /* CORES - Design System EdTech  */
+   
+   /* Primary */
+   --color-primary: #76b900;
+   --color-primary-light: #77b902;
+   
+   /* Dark / Surface */
+   --color-dark: #0c0a08;
+   --color-dark-2: #1a1a1a;
+   
+   /* Background */
+   --color-bg-card: #ffffff;
+   --color-bg-card-alt: #f9fafb;
+   --color-bg-card-hover: #f3f4f6;
+   
+   /* Text */
+   --color-text-primary: #171d0c;
+   --color-text-secondary: #0c0a08;
+   --color-text-tertiary: #5c6b48;
+   --color-text-muted: #64748b;
+   --color-text-light: #d1d5db;
+   --color-text-white: #ffffff;
+   --color-text-disabled: #9ca3af;
+   
+   /* Border */
+   --color-border: #e5e7eb;
+   
+   /* Feedback / States */
+   --color-success-text: #15803d;
+   --color-success-text-2: #166534;
+   
+   /* FONTES  */
+   
+   --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+   --font-mono: 'Liberation Mono', 'Courier New', 'Consolas', 'Monaco', monospace;
+   
+   /* TAMANHOS DE FONTE */
+   
+   --font-size-xs: 12px;
+   --font-size-base: 16px;
+   --font-size-lg: 18px;
+   --font-size-2xl: 24px;
+   --font-size-3xl: 36px;
+   --font-size-4xl: 48px;
+   
+   /* ESPAÇAMENTOS FIXOS */
+   
+   --spacing-sm: 8px;
+   --spacing-md: 16px;
+   --spacing-lg: 24px;
+   --spacing-xl: 32px;
+   --spacing-2xl: 48px;
+   --spacing-3xl: 64px;
+   
+   /* BORDAS */
+   
+   --border-radius-sm: 4px;
+   --border-radius-md: 8px;
+   --border-radius-lg: 12px;
+   
+   /* SOMBRAS */
+   
+   --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+   
+   /* LARGURAS FIXAS */
+   
+   --container-max-width: 1280px;
+   --container-content-width: 1152px;
+   
+   /* TRANSIÇÕES */
+   
+   --transition-base: 200ms ease;
+   --transition-slow: 300ms ease;
 }
