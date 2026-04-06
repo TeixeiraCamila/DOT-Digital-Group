@@ -1,13 +1,7 @@
-/* ============================================
-   STYLES - Componentes do Projeto
-   ============================================ */
-
 @import url('./variables.css');
 @import url('./reset.css');
 
-/* ============================================
-   ANIMATIONS
-   ============================================ */
+/* ANIMATIONS */
 
 @keyframes pop {
   0% { transform: scale(0.95); opacity: 0; }
@@ -36,9 +30,7 @@
   transform: translateY(0);
 }
 
-/* ============================================
-   HEADER - BEM Pattern
-   ============================================ */
+/* HEADER - BEM Pattern */
 
 .header {
   background-color: var(--color-dark);
@@ -91,13 +83,13 @@
 }
 
 .header__title {
-  font-size: var(--font-size-5xl);
+  font-size: 72px;
   font-weight: 700;
-  color: var(--color-text-white);
+  color: #FFFFFF;
   line-height: 1;
   letter-spacing: -1.8px;
   position: relative;
-  padding-left: var(--spacing-sm);
+  padding-left: 28px;
 }
 .header__title::before {
   content: '';
