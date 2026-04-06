@@ -130,6 +130,11 @@
   cursor: not-allowed;
 }
 
+.activity-btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
 /* Botão Primário */
 .btn--primary {
   display: inline-flex;
@@ -151,6 +156,11 @@
 
 .btn--primary:hover {
   background-color: var(--color-dark-surface);
+}
+
+.btn--primary:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
 .btn--primary:disabled,
@@ -182,6 +192,11 @@
 .btn--secondary:hover {
   border-color: var(--color-dark);
   background-color: var(--color-bg-card-hover);
+}
+
+.btn--secondary:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
 .btn--secondary:disabled,
@@ -1186,7 +1201,8 @@
 }
 
 .activity-discursive__textarea:focus {
-  outline: none;
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
   border-color: var(--color-primary);
 }
 

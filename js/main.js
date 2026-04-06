@@ -312,10 +312,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const stored = sessionStorage.getItem(STORAGE_KEY)
     if (stored) {
       const data = JSON.parse(stored)
-      if (data.submitted && data.answer) {
-        discursiveTextarea.value = data.answer
-        showFeedback()
+      if (data.submitted && data.selected) {
+        const optionToSelect = document.getElementById(`option-${data.selected}`)
+        if (optionToSelect) {
+          optionToSelect.checked = true
+          highlightSelectedOption()
+          showFeedback(data.isCorrect)
+        }
       }
+    }
+  }
     }
   }
 
