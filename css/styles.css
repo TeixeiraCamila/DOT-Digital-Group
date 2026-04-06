@@ -443,9 +443,10 @@
 }
 
 .slider-section__container {
-  max-width: var(--container-content-width);
+  max-width: 960px;
   margin: 0 auto;
   padding: 0 var(--spacing-xl);
+  
 }
 
 .slider-wrapper {
@@ -455,6 +456,7 @@
 }
 
 .slider-slides {
+  position: relative;
   width: 100%;
   border-radius: var(--border-radius-md);
   overflow: hidden;
@@ -469,19 +471,19 @@
   display: block;
 }
 
-.slider-image {
+.slider-slide img {
+  display: block;
   width: 100%;
   height: 440px;
   object-fit: cover;
-  border-radius: var(--border-radius-md);
 }
 
-/* Controls - Container com botões e paginação */
+/* Controls - Container with buttons and pagination BELOW the images */
 .slider-controls {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--spacing-md);
+  gap: var(--spacing-lg);
   padding: var(--spacing-md) 0;
 }
 
@@ -489,9 +491,9 @@
 .slider-btn {
   width: 40px;
   height: 40px;
-  border-radius: var(--border-radius-md);
-  background-color: var(--color-border);
-  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background-color: #1C232F;
+  border: 1px solid #1C232F;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -499,40 +501,29 @@
   transition: all var(--transition-base);
 }
 
-.slider-btn::after {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--color-text-primary);
+.slider-btn:hover {
+  background-color: #76B900;
+  border-color: #76B900;
 }
-
-/* Prev button - Default */
-.slider-btn--prev {
-  background-color: var(--color-dark-surface);
-  border-color: var(--color-dark-surface);
+.slider-btn:hover svg path{
+  fill:  #ffffff;
 }
-
-.slider-btn--prev::after {
+.slider-btn svg {
   color: var(--color-text-white);
 }
 
-/* Next button - Default */
-.slider-btn--next {
-  background-color: var(--color-border);
-  border-color: var(--color-border);
-}
-
-/* Hover state */
-.slider-btn:hover {
-  background-color: var(--color-bg-card-hover);
-  border-color: var(--color-dark);
-}
-
-/* Disabled state */
 .slider-btn:disabled,
 .slider-btn.disabled {
-  opacity: 0.5;
+  opacity: 0.3;
   cursor: not-allowed;
   pointer-events: none;
+  background-color: transparent;
+  border-color: #E5E7EB;
+}
+
+.slider-btn:disabled svg path,
+.slider-btn.disabled svg path{  
+  fill: #171D0C;
 }
 
 /* Pagination - Dots */
@@ -543,25 +534,26 @@
 }
 
 .slider-pagination-dot {
-  width: 8px;
-  height: 8px;
-  min-width: 8px;
-  min-height: 8px;
-  border-radius: 50%;
-  background-color: var(--color-border);
-  cursor: pointer;
-  transition: all var(--transition-base);
-  border: none;
-  padding: 0;
+  background-color: #e5e7ebff;
+   width: 8px;
+   height: 8px;
+    border-radius: 50%;
 }
-
+.slider-pagination-dot.active:hover,
 .slider-pagination-dot:hover {
-  background-color: var(--color-text-primary);
+  background-color: #76B900;
 }
 
-/* Active dot */
 .slider-pagination-dot.active {
-  background-color: var(--color-text-primary);
+  background-color: #1c232fff;
+}
+
+.slider-pagination-dot:disabled,
+.slider-pagination-dot.disabled {
+  background-color: #e5e7ebff;
+  opacity: 0.3;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 @media (max-width: 1024px) {
@@ -1057,9 +1049,6 @@
   line-height: 1.555;
 }
 
-.faq-item--active .faq-item__question {
-  color: #ffffff;
-}
 
 .faq-item__icon {
   width: 12px;
@@ -1387,36 +1376,10 @@
   transform: scale(1);
 }
 
-.option-item__text {
-  font-size: 16px;
-  font-weight: 500;
-  color: #334155;
-  line-height: 1.5;
-
-}
-
-.option-item__box::after {
-  content: '';
-  width: 10px;
-  height: 10px;
-  background-color: var(--color-primary);
-  border-radius: 2px;
-  opacity: 0;
-  transform: scale(0);
-  transition: all var(--transition-base);
-}
-
-.option-item__input:checked + .option-item__box::after {
-  opacity: 1;
-  transform: scale(1);
-}
-
 .option-item__input:checked ~ .option-item__text {
   color: #ffffff;
   font-weight: 500;
 }
-
-
 
 .option-item__text {
   font-size: var(--font-size-base);
@@ -1496,6 +1459,7 @@
   border: 1px solid #fef08a;
   border-radius: 4px;
   padding: 16px;
+  martin-top: 32px;
 }
 
 .activity-objective__feedback--error .feedback {

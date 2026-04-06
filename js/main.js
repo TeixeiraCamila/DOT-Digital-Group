@@ -312,16 +312,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const stored = sessionStorage.getItem(STORAGE_KEY)
     if (stored) {
       const data = JSON.parse(stored)
-      if (data.submitted && data.selected) {
-        const optionToSelect = document.getElementById(`option-${data.selected}`)
-        if (optionToSelect) {
-          optionToSelect.checked = true
-          highlightSelectedOption()
-          showFeedback(data.isCorrect)
-        }
+      if (data.submitted && data.answer) {
+        discursiveTextarea.value = data.answer
+        showFeedback()
       }
-    }
-  }
     }
   }
 
@@ -482,62 +476,72 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // Slider
-  const slidesContainer = document.querySelector('.slider-slides')
-  const prevBtn = document.querySelector('.slider-btn--prev')
-  const nextBtn = document.querySelector('.slider-btn--next')
-  const paginationContainer = document.querySelector('.slider-pagination')
+  const sliderSection = document.querySelector('.slider-section')
+  
+  if (sliderSection) {
+    const slides = sliderSection.querySelectorAll('.slider-slide')
+    const prevBtn = sliderSection.querySelector('.slider-btn--prev')
+    const nextBtn = sliderSection.querySelector('.slider-btn--next')
+    const paginationContainer = sliderSection.querySelector('.slider-pagination')
 
-  if (slidesContainer && prevBtn && nextBtn && paginationContainer) {
-    const slides = slidesContainer.querySelectorAll('.slider-slide')
-    let currentIndex = 0
-    const totalSlides = slides.length
+    if (slides.length && prevBtn && nextBtn && paginationContainer) {
+      let currentIndex = 0
+      const totalSlides = slides.length
 
-    // Criar dots de paginação
-    slides.forEach((_, index) => {
-      const dot = document.createElement('button')
-      dot.className = 'slider-pagination-dot' + (index === 0 ? ' active' : '')
-      dot.setAttribute('aria-label', `Slide ${index + 1}`)
-      dot.addEventListener('click', () => goToSlide(index))
-      paginationContainer.appendChild(dot)
-    })
-
-    const dots = paginationContainer.querySelectorAll('.slider-pagination-dot')
-
-    function updatePagination() {
-      dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentIndex)
+      // Criar dots de paginação
+      slides.forEach((_, index) => {
+        const dot = document.createElement('button')
+        dot.classList.add('slider-pagination-dot')
+        if (index === 0) {
+          dot.classList.add('active')
+        }
+        dot.setAttribute('aria-label', `Slide ${index + 1}`)
+        dot.addEventListener('click', () => goToSlide(index))
+        paginationContainer.appendChild(dot)
       })
-      prevBtn.disabled = currentIndex === 0
-      nextBtn.disabled = currentIndex === totalSlides - 1
-    }
 
-    function goToSlide(index) {
-      if (index >= 0 && index < totalSlides) {
-        currentIndex = index
-        slides.forEach((slide, i) => {
-          slide.style.display = i === currentIndex ? 'block' : 'none'
+      const dots = paginationContainer.querySelectorAll('.slider-pagination-dot')
+
+      function updatePagination() {
+        dots.forEach((dot, index) => {
+          dot.classList.toggle('active', index === currentIndex)
         })
-        updatePagination()
+        prevBtn.disabled = currentIndex === 0
+        nextBtn.disabled = currentIndex === totalSlides - 1
       }
-    }
 
-    function nextSlide() {
-      if (currentIndex < totalSlides - 1) {
-        goToSlide(currentIndex + 1)
+      function goToSlide(index) {
+        if (index >= 0 && index < totalSlides) {
+          currentIndex = index
+          slides.forEach((slide, i) => {
+            slide.style.display = i === currentIndex ? 'block' : 'none'
+          })
+          updatePagination()
+        }
       }
-    }
 
-    function prevSlide() {
-      if (currentIndex > 0) {
-        goToSlide(currentIndex - 1)
+      function nextSlide() {
+        if (currentIndex < totalSlides - 1) {
+          goToSlide(currentIndex + 1)
+        }
       }
+
+      function prevSlide() {
+        if (currentIndex > 0) {
+          goToSlide(currentIndex - 1)
+        }
+      }
+
+      // Event listeners
+      prevBtn.addEventListener('click', prevSlide)
+      nextBtn.addEventListener('click', nextSlide)
+
+      // Inicializar - garantir que todos os slides estejam escondidos exceto o primeiro
+      slides.forEach((slide, i) => {
+        slide.style.display = i === 0 ? 'block' : 'none'
+      })
+      
+      updatePagination()
     }
-
-    // Event listeners
-    prevBtn.addEventListener('click', prevSlide)
-    nextBtn.addEventListener('click', nextSlide)
-
-    // Inicializar
-    updatePagination()
   }
 })
