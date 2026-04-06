@@ -16,6 +16,52 @@ document.addEventListener('DOMContentLoaded', function () {
     fadeObserver.observe(el)
   })
 
+  // Interactive Cards
+  const CARDS_STORAGE_KEY = 'edtech_cards_state'
+  
+  function saveCardState(cardId, isExpanded) {
+    const stored = sessionStorage.getItem(CARDS_STORAGE_KEY)
+    const state = stored ? JSON.parse(stored) : {}
+    state[cardId] = isExpanded
+    sessionStorage.setItem(CARDS_STORAGE_KEY, JSON.stringify(state))
+  }
+  
+  function loadCardState(cardId) {
+    const stored = sessionStorage.getItem(CARDS_STORAGE_KEY)
+    if (stored) {
+      const state = JSON.parse(stored)
+      return state[cardId] === true
+    }
+    return false
+  }
+
+  const interactiveCards = document.querySelectorAll('.interactive-card')
+  interactiveCards.forEach((card) => {
+    const cardId = card.dataset.cardId
+    const toggleBtn = card.querySelector('.interactive-card__toggle')
+    const toggleText = toggleBtn.querySelector('.interactive-card__toggle-text')
+    
+    // Restore state from sessionStorage
+    if (loadCardState(cardId)) {
+      card.classList.add('interactive-card--expanded')
+      toggleText.textContent = 'Fechar'
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      const isExpanded = card.classList.contains('interactive-card--expanded')
+
+      if (isExpanded) {
+        card.classList.remove('interactive-card--expanded')
+        toggleText.textContent = 'Abrir'
+        saveCardState(cardId, false)
+      } else {
+        card.classList.add('interactive-card--expanded')
+        toggleText.textContent = 'Fechar'
+        saveCardState(cardId, true)
+      }
+    })
+  })
+
   // Video Overlay
   const videoOverlay = document.querySelector('.video-section__overlay')
   const videoIframe = document.getElementById('video-section__iframe')
