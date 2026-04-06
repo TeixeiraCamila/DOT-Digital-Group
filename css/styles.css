@@ -1252,11 +1252,36 @@
 }
 
 .activity-discursive__header {
-  margin-bottom: 16px;
-  display: flex;
-  gap: 1rem;
+    margin-bottom: 16px;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.activity-discursive__header svg {
+    width: 40px;
+    height: 40px !important;
+    flex-shrink: 0;
 }
 
+@media (max-width: 480px) {
+    .activity-discursive__header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .activity-discursive__header svg {
+        width: 50px;
+        height: 50px !important;
+    }
+    
+    .activity-discursive__title {
+        font-size: 22px;
+    }
+    
+    .activity-discursive__instruction {
+        font-size: 19px;
+    }
+}
 .activity-discursive__title {
   font-size: 20px;
   font-weight: 700;
@@ -1379,7 +1404,35 @@
 }
 
 .activity-objective__header {
-  margin-bottom: 16px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.activity-objective__header svg {
+    width: 40px;
+    height: 40px !important;
+    flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+    .activity-objective__header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .activity-objective__header svg {
+        width: 50px;
+        height: 50px !important;
+    }
+    
+    .activity-objective__title {
+        font-size: 22px;
+    }
+    
+    .activity-objective__instruction {
+        font-size: 19px;
+    }
 }
 
 .activity-objective__title {
