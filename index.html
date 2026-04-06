@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EdTech - Teste Técnico Frontend</title>
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="assets/images/logo_footer.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__container">
+      <div class="header__content-wrapper">
+        <div class="header__content">
+          <h1 class="header__title">
+            Lorem ipsum dolor, sit <span class="detail">amet</span>
+          </h1>
+          <p class="header__description">
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout.
+          </p>
+          <div class="header__actions">
+            <button class="btn btn--primary">Lorem Ipsum -&gt;</button>
+          </div>
+        </div>
+        <div class="header__visual">
+          <img src="assets/images/header_right.svg" alt="" class="header__image" />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="video-section">
+      <div class="video-section__container">
+        <div class="video-section__header">
+          <h2 class="video-section__title">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit
+          </h2>
+          <p class="video-section__description">
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout.
+          </p>
+        </div>
+        <div class="video-section__player">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=example"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="image-section">
+      <div class="image-section__container">
+        <div class="image-section__visual">
+          <img src="assets/images/image-import.png" alt="Imagem ilustrativa" class="image-section__image" />
+        </div>
+        <div class="image-section__content">
+          <p class="image-section__text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
+          <p class="image-section__text">
+            Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+            cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slider-section">
+      <div class="slider-section__container">
+        <div class="slider-wrapper">
+          <div class="slider-slides">
+            <div class="slider-slide slider-slide--active">
+              <img src="assets/images/image-import-1.png" alt="Slide 1" />
+            </div>
+            <div class="slider-slide">
+              <img src="assets/images/image-import-2.png" alt="Slide 2" />
+            </div>
+            <div class="slider-slide">
+              <img src="assets/images/image-import.png" alt="Slide 3" />
+            </div>
+          </div>
+          <button class="slider-btn slider-btn--prev" aria-label="Slide anterior">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+          <button class="slider-btn slider-btn--next" aria-label="Próximo slide">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+        <div class="slider-pagination"></div>
+      </div>
+    </section>
+
+    <section class="highlight-section">
+      <div class="highlight-section__container">
+        <div class="highlight-card">
+          <p class="highlight-card__text">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore
+            nihil corporis suscipit soluta dolorem id consectetur, tenetur
+            nesciunt ducimus maiores sequi veritatis nostrum, esse eaque
+            delectus ea laboriosam repellendus! Ipsum nobis, mollitia facilis
+            praesentium cupiditate quidem eaque itaque nulla ab obcaecati
+            sapiente sequi porro, totam, non molestias excepturi explicabo
+            adipisci deleniti architecto animi!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cards-section">
+      <div class="cards-section__container">
+        <div class="cards-section__header">
+          <h2 class="cards-section__title">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit
+          </h2>
+          <p class="cards-section__description">
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout.
+          </p>
+        </div>
+        <div class="cards-wrapper">
+          <div class="interactive-card interactive-card--collapsed">
+            <div class="interactive-card__icon">
+              <span class="interactive-card__question-mark">?</span>
+            </div>
+            <div class="interactive-card__content">
+              <p class="interactive-card__text">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Saepe excepturi, dolores perspiciatis commodi eum dolore
+                nesciunt tempore similique at quas.
+              </p>
+            </div>
+            <button class="interactive-card__toggle">
+              <span class="interactive-card__toggle-text">Abrir</span>
+            </button>
+          </div>
+          <div class="interactive-card interactive-card--collapsed">
+            <div class="interactive-card__icon">
+              <span class="interactive-card__question-mark">?</span>
+            </div>
+            <div class="interactive-card__content">
+              <p class="interactive-card__text">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Saepe excepturi, dolores perspiciatis commodi eum dolore
+                nesciunt tempore similique at quas.
+              </p>
+            </div>
+            <button class="interactive-card__toggle">
+              <span class="interactive-card__toggle-text">Abrir</span>
+            </button>
+          </div>
+          <div class="interactive-card interactive-card--collapsed">
+            <div class="interactive-card__icon">
+              <span class="interactive-card__question-mark">?</span>
+            </div>
+            <div class="interactive-card__content">
+              <p class="interactive-card__text">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Saepe excepturi, dolores perspiciatis commodi eum dolore
+                nesciunt tempore similique at quas.
+              </p>
+            </div>
+            <button class="interactive-card__toggle">
+              <span class="interactive-card__toggle-text">Abrir</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="text-section">
+      <div class="text-section__container">
+        <div class="text-section__content">
+          <h2 class="text-section__title">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit
+          </h2>
+          <p class="text-section__description">
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="podcast-section">
+      <div class="podcast-section__container">
+        <div class="podcast-player" data-audio="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+          role="region" aria-label="Player de áudio">
+          <button class="podcast-player__btn-play" aria-label="Reproduzir" tabindex="0">
+            <svg class="podcast-player__icon-play" width="14" height="18" viewBox="0 0 14 18" fill="none"
+              aria-hidden="true">
+              <path d="M1 1L13 9L1 17V1Z" fill="#475569" />
+            </svg>
+          </button>
+          <div class="podcast-player__progress-container" role="slider" aria-label="Progresso" aria-valuemin="0"
+            aria-valuemax="100" aria-valuenow="0" tabindex="0">
+            <div class="podcast-player__progress-track">
+              <div class="podcast-player__progress-filled"></div>
+            </div>
+          </div>
+          <span class="podcast-player__time" aria-live="polite"><span class="podcast-player__current-time">00:00</span>
+            / <span class="podcast-player__total-time">00:00</span></span>
+          <div class="podcast-player__volume-container">
+            <button class="podcast-player__btn-volume" aria-label="Volume" tabindex="0">
+              <svg width="16" height="15" viewBox="0 0 16 15" fill="none" aria-hidden="true">
+                <path d="M0 3V12H3L7 15V0L3 3H0Z" fill="#64748b" />
+                <path d="M10 4.5C10 4.5 11 5.5 11 7.5C11 9.5 10 10.5 10 10.5" stroke="#64748b" stroke-width="1.5"
+                  stroke-linecap="round" />
+                <path d="M13 6C13 6 14.5 7.5 14.5 10C14.5 12.5 13 14 13 14" stroke="#64748b" stroke-width="1.5"
+                  stroke-linecap="round" />
+              </svg>
+            </button>
+            <div class="podcast-player__volume-bar" role="slider" aria-label="Volume" aria-valuemin="0"
+              aria-valuemax="100" aria-valuenow="66" tabindex="0">
+              <div class="podcast-player__volume-filled"></div>
+            </div>
+          </div>
+          <button class="podcast-player__btn-reset" aria-label="Reiniciar" tabindex="0">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path
+                d="M8 2V0L4 4L8 8V6C10.2091 6 12 7.79086 12 10C12 12.2091 10.2091 14 8 14C5.79086 14 4 12.2091 4 10H2C2 13.866 5.13401 17 9 17C12.866 17 16 13.866 16 10C16 6.13401 12.866 3 9 3L8 2Z"
+                fill="#64748b" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="activities-section">
+      <div class="activities-section__container">
+        <div class="activities-section__header">
+          <h2 class="activities-section__title">Atividades</h2>
+        </div>
+
+        <div class="activity-discursive">
+          <div class="activity-discursive__header">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="40" height="40" rx="20" fill="#76B900" fill-opacity="0.1" />
+              <path
+                d="M11 22V20H18V22H11ZM11 18V16H22V18H11ZM11 14V12H22V14H11ZM20 28V24.925L25.525 19.425C25.675 19.275 25.8417 19.1667 26.025 19.1C26.2083 19.0333 26.3917 19 26.575 19C26.775 19 26.9667 19.0375 27.15 19.1125C27.3333 19.1875 27.5 19.3 27.65 19.45L28.575 20.375C28.7083 20.525 28.8125 20.6917 28.8875 20.875C28.9625 21.0583 29 21.2417 29 21.425C29 21.6083 28.9667 21.7958 28.9 21.9875C28.8333 22.1792 28.725 22.35 28.575 22.5L23.075 28H20ZM26.575 22.4L27.5 21.425L26.575 20.5L25.625 21.45L26.575 22.4Z"
+                fill="#76B900" />
+            </svg>
+
+            <div class="activity-discursive__content">
+              <h3 class="activity-discursive__title">Atividade discursiva</h3>
+              <p class="activity-discursive__instruction">
+                It is a long established fact that a reader will be distracted by the readable content of a page when
+                looking at its layout.
+              </p>
+            </div>
+          </div>
+          <div class="activity-discursive__field">
+            <textarea id="discursive-answer" class="activity-discursive__textarea"
+              placeholder="Digite sua resposta aqui..."></textarea>
+          </div>
+          <div class="activity-discursive__feedback" id="discursive-feedback"></div>
+          <div class="activity-discursive__actions">
+            <button class="activity-btn activity-btn--primary" id="discursive-submit" disabled>Responder</button>
+            <button class="activity-btn activity-btn--secondary" id="discursive-edit" disabled>Alterar</button>
+          </div>
+        </div>
+
+        <div class="activity-objective">
+          <div class="activity-objective__header">
+            <h3 class="activity-objective__title">Atividade Objetiva</h3>
+            <p class="activity-objective__instruction">It is a long established fact that a reader will be distracted by
+              the readable content of a page.</p>
+          </div>
+          <div class="activity-objective__options">
+            <label class="option-item">
+              <input type="radio" name="objective-option" value="a" class="option-item__input" />
+              <span class="option-item__box"></span>
+              <span class="option-item__text">A) Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry.</span>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="objective-option" value="b" class="option-item__input" />
+              <span class="option-item__box"></span>
+              <span class="option-item__text">B) Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry.</span>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="objective-option" value="c" class="option-item__input" />
+              <span class="option-item__box"></span>
+              <span class="option-item__text">C) Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry.</span>
+            </label>
+            <label class="option-item">
+              <input type="radio" name="objective-option" value="d" class="option-item__input" />
+              <span class="option-item__box"></span>
+              <span class="option-item__text">D) Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry.</span>
+            </label>
+          </div>
+          <div class="activity-objective__feedback" id="objective-feedback"></div>
+          <div class="activity-objective__actions">
+            <button class="activity-btn activity-btn--primary" id="objective-submit" disabled>Responder</button>
+            <button class="activity-btn activity-btn--secondary" id="objective-edit" disabled>Alterar</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <div class="faq-section__container">
+        <div class="faq-section__header">
+          <h2 class="faq-section__title">Perguntas frequentes</h2>
+          <p class="faq-section__description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          </p>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item faq-item--active">
+            <button class="faq-item__trigger" aria-expanded="true">
+              <span class="faq-item__question">Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry.</span>
+              <span class="faq-item__icon"></span>
+            </button>
+            <div class="faq-item__content">
+              <p>It is a long established fact that a reader will be distracted by the readable content of a page when
+                looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
+                of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-item__trigger" aria-expanded="false">
+              <span class="faq-item__question">Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry.</span>
+              <span class="faq-item__icon"></span>
+            </button>
+            <div class="faq-item__content">
+              <p>It is a long established fact that a reader will be distracted by the readable content of a page when
+                looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
+                of letters.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-item__trigger" aria-expanded="false">
+              <span class="faq-item__question">Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry.</span>
+              <span class="faq-item__icon"></span>
+            </button>
+            <div class="faq-item__content">
+              <p>It is a long established fact that a reader will be distracted by the readable content of a page when
+                looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
+                of letters.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-item__trigger" aria-expanded="false">
+              <span class="faq-item__question">Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry.</span>
+              <span class="faq-item__icon"></span>
+            </button>
+            <div class="faq-item__content">
+              <p>It is a long established fact that a reader will be distracted by the readable content of a page when
+                looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
+                of letters.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__logo">
+        <img src="assets/images/logo_footer.svg" alt="DOT Digital Group" class="footer__logo-image" />
+      </div>
+      <p class="footer__copyright">
+        © <span id="footer-year">2026</span> DOT Digital Group. Todos os direitos reservados.
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
