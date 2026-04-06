@@ -48,12 +48,12 @@
   --color-success-text: #15803d;
   --color-success-text-2: #166534;
   
-  /* ============================================
-     FONTES
-     ============================================ */
-  
-  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-mono: 'Liberation Mono', 'Consolas', 'Monaco', monospace;
+/* ============================================
+   FONTES
+   ============================================ */
+
+--font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+--font-mono: 'Liberation Mono', 'Courier New', 'Consolas', 'Monaco', monospace;
   
   /* ============================================
      TAMANHOS DE FONTE
