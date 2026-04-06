@@ -12,61 +12,31 @@ document.addEventListener('DOMContentLoaded', function () {
   }, { threshold: 0.1 });
   
   fadeElements.forEach(el => {
-    el.classList.add('fade-in');
-    fadeObserver.observe(el);
-  });
+    el.classList.add('fade-in')
+    fadeObserver.observe(el)
+  })
 
-  // Footer year
-  const yearElement = document.getElementById('footer-year')
-  if (yearElement) {
-    yearElement.textContent = new Date().getFullYear()
-  }
+  // Video Overlay
+  const videoOverlay = document.querySelector('.video-section__overlay')
+  const videoIframe = document.getElementById('video-section__iframe')
 
-  // Interactive Cards
-  const CARDS_STORAGE_KEY = 'edtech_cards_state'
-  
-  function saveCardState(cardId, isExpanded) {
-    const stored = sessionStorage.getItem(CARDS_STORAGE_KEY)
-    const state = stored ? JSON.parse(stored) : {}
-    state[cardId] = isExpanded
-    sessionStorage.setItem(CARDS_STORAGE_KEY, JSON.stringify(state))
-  }
-  
-  function loadCardState(cardId) {
-    const stored = sessionStorage.getItem(CARDS_STORAGE_KEY)
-    if (stored) {
-      const state = JSON.parse(stored)
-      return state[cardId] === true
-    }
-    return false
-  }
-
-  const interactiveCards = document.querySelectorAll('.interactive-card')
-  interactiveCards.forEach((card) => {
-    const cardId = card.dataset.cardId
-    const toggleBtn = card.querySelector('.interactive-card__toggle')
-    const toggleText = toggleBtn.querySelector('.interactive-card__toggle-text')
-    
-    // Restore state from sessionStorage
-    if (loadCardState(cardId)) {
-      card.classList.add('interactive-card--expanded')
-      toggleText.textContent = 'Fechar'
+  if (videoOverlay && videoIframe) {
+    function playVideo() {
+      videoOverlay.classList.add('hidden')
+      const src = videoIframe.src
+      if (!src.includes('autoplay=1')) {
+        videoIframe.src = src + '&autoplay=1'
+      }
     }
 
-    toggleBtn.addEventListener('click', () => {
-      const isExpanded = card.classList.contains('interactive-card--expanded')
-
-      if (isExpanded) {
-        card.classList.remove('interactive-card--expanded')
-        toggleText.textContent = 'Abrir'
-        saveCardState(cardId, false)
-      } else {
-        card.classList.add('interactive-card--expanded')
-        toggleText.textContent = 'Fechar'
-        saveCardState(cardId, true)
+    videoOverlay.addEventListener('click', playVideo)
+    videoOverlay.addEventListener('keydown', function (e) {
+      if (e.code === 'Enter' || e.code === 'Space') {
+        e.preventDefault()
+        playVideo()
       }
     })
-  })
+  }
 
   // Podcast Player (Howler.js)
   const podcastPlayer = document.querySelector('.podcast-player')
@@ -458,7 +428,13 @@ document.addEventListener('DOMContentLoaded', function () {
     
     objectiveOptions.forEach(option => {
       const input = option.querySelector('.option-item__input');
+      
       input.addEventListener('change', function() {
+        highlightSelectedOption();
+        updateButtons();
+      });
+      
+      option.addEventListener('click', function() {
         highlightSelectedOption();
         updateButtons();
       });
