@@ -1,4 +1,21 @@
 document.addEventListener('DOMContentLoaded', function () {
+  // Fade-in on scroll
+  const fadeElements = document.querySelectorAll('.video-section, .image-section, .slider-section, .highlight-section, .cards-section, .text-section, .podcast-section, .activities-section, .faq-section');
+  
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        fadeObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  
+  fadeElements.forEach(el => {
+    el.classList.add('fade-in');
+    fadeObserver.observe(el);
+  });
+
   // Footer year
   const yearElement = document.getElementById('footer-year')
   if (yearElement) {
@@ -6,10 +23,35 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Interactive Cards
+  const CARDS_STORAGE_KEY = 'edtech_cards_state'
+  
+  function saveCardState(cardId, isExpanded) {
+    const stored = sessionStorage.getItem(CARDS_STORAGE_KEY)
+    const state = stored ? JSON.parse(stored) : {}
+    state[cardId] = isExpanded
+    sessionStorage.setItem(CARDS_STORAGE_KEY, JSON.stringify(state))
+  }
+  
+  function loadCardState(cardId) {
+    const stored = sessionStorage.getItem(CARDS_STORAGE_KEY)
+    if (stored) {
+      const state = JSON.parse(stored)
+      return state[cardId] === true
+    }
+    return false
+  }
+
   const interactiveCards = document.querySelectorAll('.interactive-card')
   interactiveCards.forEach((card) => {
+    const cardId = card.dataset.cardId
     const toggleBtn = card.querySelector('.interactive-card__toggle')
     const toggleText = toggleBtn.querySelector('.interactive-card__toggle-text')
+    
+    // Restore state from sessionStorage
+    if (loadCardState(cardId)) {
+      card.classList.add('interactive-card--expanded')
+      toggleText.textContent = 'Fechar'
+    }
 
     toggleBtn.addEventListener('click', () => {
       const isExpanded = card.classList.contains('interactive-card--expanded')
@@ -17,9 +59,11 @@ document.addEventListener('DOMContentLoaded', function () {
       if (isExpanded) {
         card.classList.remove('interactive-card--expanded')
         toggleText.textContent = 'Abrir'
+        saveCardState(cardId, false)
       } else {
         card.classList.add('interactive-card--expanded')
         toggleText.textContent = 'Fechar'
+        saveCardState(cardId, true)
       }
     })
   })
