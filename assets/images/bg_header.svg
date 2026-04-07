@@ -10,14 +10,6 @@
 <g filter="url(#filter1_f_1_686)">
 <rect x="680" y="-200" width="800" height="800" rx="400" fill="url(#paint2_linear_1_686)"/>
 </g>
-<g clip-path="url(#clip1_1_686)">
-<path d="M0 161.55C256 107.7 469.333 188.475 640 403.875C810.667 619.275 1024 700.05 1280 646.2" stroke="#76B900" stroke-width="2.08775"/>
-<path d="M0 403.875C341.333 350.025 597.333 376.95 768 484.65C938.667 592.35 1109.33 511.575 1280 242.325" stroke="#76B900" stroke-width="1.04387"/>
-<path opacity="0.5" d="M1280 80.775C1024 242.325 725.333 376.95 384 484.65C42.6667 592.35 -85.3333 673.125 0 726.975" stroke="#76B900" stroke-width="1.56581"/>
-</g>
-<rect x="1088.5" y="121.66" width="127" height="127" rx="63.5" stroke="#76B900" stroke-opacity="0.2"/>
-<rect x="1152" y="96.7671" width="125" height="125" rx="62.5" transform="rotate(45 1152 96.7671)" stroke="#76B900" stroke-opacity="0.1"/>
-<rect x="1063.61" y="185.16" width="125" height="125" rx="62.5" transform="rotate(-45 1063.61 185.16)" stroke="#76B900" stroke-opacity="0.1"/>
 <rect opacity="0.3" x="576.5" y="599.48" width="63" height="63" rx="31.5" stroke="white" stroke-opacity="0.1"/>
 </g>
 <defs>
@@ -45,9 +37,6 @@
 </linearGradient>
 <clipPath id="clip0_1_686">
 <rect width="1280" height="743.75" fill="white"/>
-</clipPath>
-<clipPath id="clip1_1_686">
-<rect width="1280" height="807.75" fill="white"/>
 </clipPath>
 </defs>
 </svg>

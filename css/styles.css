@@ -30,18 +30,73 @@
   transform: translateY(0);
 }
 
-/* HEADER - BEM Pattern */
-
+/* HEADER */
 .header {
-  background-color: var(--color-dark);
   background-image: url('../assets/images/bg_header.svg');
+  background-color: var(--color-dark);
   background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   position: relative;
   overflow: hidden;
-  animation: headerFadeIn 1.5s ease-out;
+  
 }
+
+.header-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Allow clicks to pass through to content */
+}
+
+.header-background .header-bg-path-1 {
+  stroke-dasharray: 1600;
+  stroke-dashoffset: 1600;
+  animation: draw-line 1.8s ease-out 0.3s forwards;
+}
+
+.header-background .header-bg-path-2 {
+  stroke-dasharray: 1600;
+  stroke-dashoffset: 1600;
+  animation: draw-line 1.8s ease-out 1s forwards;
+}
+
+.header-background .header-bg-path-3 {
+  stroke-dasharray: 1600;
+  stroke-dashoffset: 1600;
+  animation: draw-line 1.8s ease-out 1.7s forwards;
+}
+
+/* Original header__vetor--lines animations (kept for consistency) */
+.header__vetor--lines path:nth-child(1) {
+  stroke-dasharray: 1600;
+  stroke-dashoffset: 1600;
+  animation: draw-line 1.8s ease-out 0.3s forwards;
+}
+
+.header__vetor--lines path:nth-child(2) {
+  stroke-dasharray: 1600;
+  stroke-dashoffset: 1600;
+  animation: draw-line 1.8s ease-out 1s forwards;
+}
+
+.header__vetor--lines path:nth-child(3) {
+  stroke-dasharray: 1600;
+  stroke-dashoffset: 1600;
+  animation: draw-line 1.8s ease-out 1.7s forwards;
+}
+
+@keyframes draw-line {
+  to { stroke-dashoffset: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header__vetor--lines path {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}
+
 
 @keyframes headerFadeIn {
   0% {
@@ -52,17 +107,30 @@
   }
 }
 
+/* Header background animation matching header__vetor--circle */
+.header-background-animated path:nth-child(1) {
+  stroke-dasharray: 1600;
+  stroke-dashoffset: 1600;
+  animation: draw-line 1.8s ease-out 0.3s forwards;
+}
+
+.header-background-animated path:nth-child(2) {
+  stroke-dasharray: 1600;
+  stroke-dashoffset: 1600;
+  animation: draw-line 1.8s ease-out 1s forwards;
+}
+
+.header-background-animated path:nth-child(3) {
+  stroke-dasharray: 1600;
+  stroke-dashoffset: 1600;
+  animation: draw-line 1.8s ease-out 1.7s forwards;
+}
+
 .header__container {
   position: relative;
-  z-index: 1;
+  z-index: 100;
   display: flex;
-  align-items: flex-start;
   justify-content: center;
-  gap: var(--spacing-3xl);
-  padding: 128px var(--spacing-xl);
-  width: 100%;
-  max-width: var(--container-max-width);
-  margin: 0 auto;
 }
 
 .header__content-wrapper {
@@ -71,6 +139,52 @@
   justify-content: space-between;
   width: 100%;
   max-width: var(--container-content-width);
+  position: relative;
+  padding: 128px var(--spacing-xl);
+}
+.header__vetor--circle {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  z-index: -1;
+}
+
+/* Cada rect começa "invisível" (dashoffset = perímetro) */
+.header__vetor--circle rect:nth-child(1) {
+  stroke-dasharray: 399;
+  stroke-dashoffset: 399;
+  animation: draw-stroke 1.2s ease-out 0.2s forwards;
+}
+
+.header__vetor--circle rect:nth-child(2) {
+  stroke-dasharray: 393;
+  stroke-dashoffset: 393;
+  animation: draw-stroke 1.2s ease-out 0.9s forwards;
+}
+
+.header__vetor--circle rect:nth-child(3) {
+  stroke-dasharray: 393;
+  stroke-dashoffset: 393;
+  animation: draw-stroke 1.2s ease-out 1.6s forwards;
+}
+
+@keyframes draw-stroke {
+  to { stroke-dashoffset: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header__vetor--circle rect {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}
+
+.header__vetor--lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* Lado Esquerdo - Conteúdo Textual */
@@ -90,6 +204,11 @@
   letter-spacing: -1.8px;
   position: relative;
   padding-left: 28px;
+}
+
+@keyframes vetor-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
 .header__title::before {
   content: '';
@@ -240,16 +359,7 @@
   cursor: not-allowed;
 }
 
-/* Lado Direito - Imagem/UI */
-.header__visual {
-  width: 516px;
-  height: 372px;
-  background-image: url('../assets/images/header_right.svg');
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: var(--border-radius-lg);
-}
+
 
 /* ============================================
    MEDIA QUERIES - Header Mobile
