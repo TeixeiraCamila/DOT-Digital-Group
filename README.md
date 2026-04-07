@@ -24,6 +24,9 @@ Acesse: `http://localhost:3000`
 - **Acessibilidade**: HTML semântico, ARIA, navegação por teclado
 - **Vídeo**: YouTube embed com overlay preto antes do play (sem iframe automático)
 - **Áudio**: Howler.js para controle via JavaScript (play, pause, progresso, volume)
+- **Ferramentas de Design**: Pencil + IA para criação de variáveis CSS
+- **Padrões Seguidos**: Padrão BEM e convenções de código consistentes aplicados
+- **Conformidade**: Todas as diretrizes do assets\TesteTecnicoDesenvolvedorFrontend_EdTech_.html foram seguidas
 
 ## Estrutura do Projeto
 
